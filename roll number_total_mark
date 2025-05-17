@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+    int roll[5];
+    int marks[5][3];   
+    int total[5];
+    int i, j;
+    for(i = 0; i < 5; i++) {
+        printf("Enter roll number for student %d: ", i + 1);
+        scanf("%d", &roll[i]);
+
+        printf("Enter marks for 3 subjects for student %d:\n", i + 1);
+        total[i] = 0;  // Initialize total marks
+        for(j = 0; j < 3; j++) {
+            scanf("%d", &marks[i][j]);
+            total[i] += marks[i][j];
+        }
+    }
+    printf("\nMarksheet:\n");
+    printf("Roll No\tSubject1\tSubject2\tSubject3\tTotal\n");
+    for(i = 0; i < 5; i++) {
+        printf("%d\t", roll[i]);
+        for(j = 0; j < 3; j++) {
+            printf("%d\t\t", marks[i][j]);
+        }
+        printf("%d\n", total[i]);
+    }
+
+    return 0;
+}
